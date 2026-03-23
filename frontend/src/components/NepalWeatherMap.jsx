@@ -6,10 +6,10 @@ import { CITY_META } from "../data/cityData";
 
 const RI = {
   1: { color: "#10b981", label: "Low", range: "< 1 mm" },
-  2: { color: "#3b82f6", label: "Light", range: "1–5 mm" },
-  3: { color: "#f59e0b", label: "Moderate", range: "5–20 mm" },
-  4: { color: "#f97316", label: "Heavy", range: "20–50 mm" },
-  5: { color: "#ef4444", label: "Extreme", range: "> 50 mm" },
+  2: { color: "#3b82f6", label: "Light", range: "1–2 mm" },
+  3: { color: "#f59e0b", label: "Moderate", range: "2–10 mm" },
+  4: { color: "#f97316", label: "Heavy", range: "10–30 mm" },
+  5: { color: "#ef4444", label: "Extreme", range: ">30 mm" },
 };
 
 function fmtShort(iso) {
@@ -364,12 +364,12 @@ export default function NepalRainfallHeatmap() {
                 />
                 <div className="flex-1 min-w-0">
                   <div
-                    className="text-[1rem] font-semibold leading-none"
+                    className="text-[1.1rem] font-semibold leading-none"
                     style={{ color: cfg.color }}
                   >
                     {cfg.label}
                   </div>
-                  <div className="mono text-[0.8rem] text-slate-400 leading-none mt-0.5">
+                  <div className="mono text-[1rem] text-slate-400 leading-none mt-0.5">
                     {cfg.range}
                   </div>
                 </div>
