@@ -31,6 +31,11 @@ function groupByDate(data) {
 }
 
 export default function NepalRainfallHeatmap() {
+  const apiUrl =
+    import.meta.env.MODE === "development"
+      ? "http://localhost:3000/data"
+      : "/data";
+
   const mapRef = useRef(null);
   const mapObjRef = useRef(null);
   const markersRef = useRef({});
@@ -44,10 +49,6 @@ export default function NepalRainfallHeatmap() {
   const [citySearch, setCitySearch] = useState("");
 
   function initMap() {
-    apiUrl =
-      import.meta.env.MODE === "development"
-        ? "http://localhost:3000/data"
-        : "/data";
     if (mapObjRef.current || !mapRef.current) return;
     const L = window.L;
     const map = L.map(mapRef.current, {
